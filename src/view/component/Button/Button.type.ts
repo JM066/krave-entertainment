@@ -5,6 +5,6 @@ export interface IProps {
   round?: boolean
   loading?: boolean
   link?: string
-  disable: boolean
+  disable?: boolean
   variant: 'primary' | 'secondary' | 'ghost'
 }

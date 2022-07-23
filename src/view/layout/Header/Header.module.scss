@@ -1,0 +1,48 @@
+.Header {
+  box-shadow: 0 2px 3px rgb(0 0 0 / 30%);
+  z-index: 999;
+  border: 0;
+  border-top: 5px solid #000;
+  border-image: linear-gradient(90deg, #12bdfd, #9f79f3) 6;
+  background: #fff;
+  padding: 0.8rem 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 1.125rem;
+  font-weight: 900;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  & .HeaderLeft {
+    display: flex;
+    align-items: center;
+    & .Logo {
+      width: 120px;
+      margin: 0 20px;
+    }
+  }
+
+  & .HeaderIcons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    & .Button {
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+      &:last-child {
+        display: flex;
+        align-items: center;
+        &:hover {
+          color: var(--light-blue);
+        }
+      }
+    }
+  }
+}

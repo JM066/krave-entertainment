@@ -1,0 +1,10 @@
+.NavBar {
+  & .NavItem {
+    text-decoration: none;
+    color: #000;
+    margin-right: 10px;
+    &:first-child {
+      color: var(--light-blue);
+    }
+  }
+}
