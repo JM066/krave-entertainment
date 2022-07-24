@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext, Fragment } from 'react'
 import { IProps } from './Explore.type'
-import Card from '../../component/Card'
+import Card from '../../component/Card/Card'
 import { Menu1, Menu2, Menu3, Menu4 } from './ExploreData'
 import styles from './Explore.module.scss'
 

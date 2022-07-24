@@ -1,0 +1,16 @@
+.Video {
+  & .MainImgContainer {
+    padding: 10px;
+
+    & .MainImg {
+      height: 300px;
+      width: 100%;
+    }
+  }
+  & .Wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+  }
+}
