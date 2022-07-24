@@ -1,7 +1,8 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { FLUSH, PAUSE, PERSIST, persistReducer, PURGE, REGISTER, REHYDRATE } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
-import mainReducer from './mainSlice'
+import mobileReducer from './reducer/videoSlice'
+import { videoApi } from './api/videoApi'
 
 const persistConfig = {
   key: 'root',
@@ -10,20 +11,18 @@ const persistConfig = {
 }
 
 const reducers = combineReducers({
-  mainReducer: mainReducer, // if we just use { a } instead of {a: a} it is not recongnizing another states in later usages
+  mobileReducer: mobileReducer,
+  [videoApi.reducerPath]: videoApi.reducer,
 })
 
 const persistedReducer = persistReducer(persistConfig, reducers)
 
 const store = configureStore({
   reducer: persistedReducer,
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({
-      serializableCheck: {
-        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-      },
-    }),
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware({}).concat([videoApi.middleware]),
+  devTools: process.env.NODE_ENV !== 'production',
 })
 
 export default store
 export type RootState = ReturnType<typeof store.getState>
+export type AppDispatch = typeof store.dispatch

@@ -1,0 +1,17 @@
+.Card {
+  word-break: break-all;
+  min-height: 370px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+
+  &.border {
+    border: 1px solid var(--grey4);
+  }
+  &.shadow {
+    box-shadow: 0 2px 3px rgb(0 0 0 / 30%);
+  }
+}

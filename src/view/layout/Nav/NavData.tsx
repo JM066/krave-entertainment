@@ -1,10 +1,5 @@
 export const MENU = [
   {
-    id: 'explore',
-    name: 'EXPLORE',
-    path: '/explore',
-  },
-  {
     id: 'quiz',
     name: 'QUIZ',
     path: '/quiz',

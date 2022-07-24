@@ -11,7 +11,7 @@ export default function Button(props: React.PropsWithChildren<IProps>) {
     return props.icon !== undefined ? <div>{props.icon}</div> : <span className={styles.hidden} />
   }
 
-  const handleClick = (ev: any) => {
+  const handleClick = (ev: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     if (props.disable !== true) {
       props.onclick(ev)
     }
