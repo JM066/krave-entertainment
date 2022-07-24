@@ -1,6 +1,6 @@
 export interface IProps {
-  variant: 'primary' | 'secondary' | 'tertiary'
   bolded?: boolean
   className?: string
+  size: 'small' | 'medium' | 'large'
   alignment: 'center' | 'left' | 'right'
 }

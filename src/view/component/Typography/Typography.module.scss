@@ -1,6 +1,5 @@
 .Typography {
-  font-size: 1.4rem;
-  font-weight: 500;
+  font-size: 1.2rem;
 
   &.bold {
     font-weight: 700;
@@ -14,5 +13,14 @@
   }
   &.right {
     text-align: right;
+  }
+  &.small {
+    font-size: 1rem;
+  }
+  &.medium {
+    font-size: 1.2rem;
+  }
+  &.large {
+    font-size: 1.4rem;
   }
 }

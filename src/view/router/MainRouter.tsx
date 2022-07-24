@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from '../page/Home/Home'
 import FallBack from '../component/FallBack/FallBack'
 import MainLayout from '../layout/Layout'
+import Blog from '../page/Video/Blog/Blog'
 const Quiz = lazy(() => import('../page/Quiz/Quiz'))
 const Video = lazy(() => import('../page/Video/Video'))
 export default function MainRouter() {
@@ -14,6 +15,7 @@ export default function MainRouter() {
             <Route path='/' element={<Home />} />
             <Route path='/quiz' element={<Quiz />} />
             <Route path='/video' element={<Video />} />
+            <Route path='/video/:id' element={<Blog />} />
           </Routes>
         </MainLayout>
       </Suspense>

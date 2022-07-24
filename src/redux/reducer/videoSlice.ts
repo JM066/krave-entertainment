@@ -1,23 +1,27 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { isMobile } from 'react-device-detect'
 export interface IProps {
-  isMobile: boolean
+  id: number
+  title: string
+  url: string
 }
 const initialState = {
-  isMobile: isMobile,
+  id: 1,
+  title: '',
+  url: '',
 }
 
-export const mobileSlice = createSlice({
-  name: 'mobileSlice',
+export const videoSlice = createSlice({
+  name: 'videoSlice',
   initialState,
   reducers: {
-    setIsMobile: (state, action: PayloadAction<IProps>) => {
-      state.isMobile = action.payload.isMobile
+    createBlog: (state, action: PayloadAction<IProps>) => {
+      state = action.payload
     },
   },
 })
 
 // each case under reducers becomes an action
-export const { setIsMobile } = mobileSlice.actions
+export const { createBlog } = videoSlice.actions
 
-export default mobileSlice.reducer
+export default videoSlice.reducer

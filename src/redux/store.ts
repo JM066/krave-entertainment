@@ -1,7 +1,7 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { FLUSH, PAUSE, PERSIST, persistReducer, PURGE, REGISTER, REHYDRATE } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
-import mobileReducer from './reducer/videoSlice'
+import videoReducer from './reducer/videoSlice'
 import { videoApi } from './api/videoApi'
 
 const persistConfig = {
@@ -11,7 +11,7 @@ const persistConfig = {
 }
 
 const reducers = combineReducers({
-  mobileReducer: mobileReducer,
+  videoReducer: videoReducer,
   [videoApi.reducerPath]: videoApi.reducer,
 })
 
@@ -19,7 +19,12 @@ const persistedReducer = persistReducer(persistConfig, reducers)
 
 const store = configureStore({
   reducer: persistedReducer,
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware({}).concat([videoApi.middleware]),
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }).concat([videoApi.middleware]),
   devTools: process.env.NODE_ENV !== 'production',
 })
 

@@ -1,7 +1,13 @@
 .Video {
-  & .MainImgContainer {
-    padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
 
+  & .MainImgContainer {
+    padding-bottom: 10px;
+    width: 100%;
     & .MainImg {
       height: 300px;
       width: 100%;
@@ -12,5 +18,27 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     grid-auto-rows: minmax(100px, auto);
+    margin-bottom: 20px;
+
+    & .Card {
+      height: 100%;
+      & .CardImg {
+        width: 100%;
+        height: 80%;
+      }
+      & .Text {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 20%;
+        width: 100%;
+        & .Title {
+          width: 60%;
+        }
+        & .Time {
+          color: gray;
+        }
+      }
+    }
   }
 }
