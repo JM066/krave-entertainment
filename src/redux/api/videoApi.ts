@@ -7,7 +7,7 @@ type VideoType = {
   title: string
   url: string
   thumbnailUrl: string
-  createdAt: Date
+  createdAt: string
 }
 
 export const videoApi = createApi({
@@ -19,7 +19,9 @@ export const videoApi = createApi({
         return '/photos'
       },
       transformResponse: (response: VideoType[]) => {
-        response.map((item) => (item.createdAt = getRandomDate(new Date(2017, 0, 1), new Date())))
+        response.map(
+          (item) => (item.createdAt = getRandomDate(new Date(2017, 0, 1), new Date()).toString()),
+        )
         return response
       },
     }),

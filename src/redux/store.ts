@@ -11,13 +11,13 @@ const persistConfig = {
 }
 
 const reducers = combineReducers({
-  videoReducer: videoReducer,
+  videoSlice: videoReducer,
   [videoApi.reducerPath]: videoApi.reducer,
 })
 
 const persistedReducer = persistReducer(persistConfig, reducers)
 
-const store = configureStore({
+export const store = configureStore({
   reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
@@ -25,9 +25,7 @@ const store = configureStore({
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }).concat([videoApi.middleware]),
-  devTools: process.env.NODE_ENV !== 'production',
 })
 
-export default store
 export type RootState = ReturnType<typeof store.getState>
 export type AppDispatch = typeof store.dispatch
