@@ -3,10 +3,10 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from '../page/Home/Home'
 import FallBack from '../component/FallBack/FallBack'
 import MainLayout from '../layout/Layout'
-import Blog from '../page/Blog/Blog'
 const Quiz = lazy(() => import('../page/Quiz/Quiz'))
 const Video = lazy(() => import('../page/Video/Video'))
-// const Blog = lazy(() => import('../page/Blog/Blog'))
+const Blog = lazy(() => import('../page/Blog/Blog'))
+
 export default function MainRouter() {
   return (
     <BrowserRouter>

@@ -1,10 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { isMobile } from 'react-device-detect'
 
 export interface IProps {
   id: number
   title: string
   url: string
+  createdAt: string
 }
 interface VideoState {
   selectedVideoBlog?: IProps | null

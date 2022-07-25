@@ -1,0 +1,48 @@
+.ArticleContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 6rem 2rem;
+
+  & .Article {
+    width: 60%;
+  }
+  & .List {
+    width: 40%;
+
+    & .Card {
+      display: flex;
+      flex-direction: row;
+
+      & .Text {
+        width: 50%;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 800px) {
+  .ArticleContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 8rem 5rem;
+
+    & .Article {
+      width: 100%;
+    }
+
+    & .List {
+      width: 100%;
+      margin-top: 30px;
+
+      & .Card {
+        display: flex;
+        flex-direction: row;
+
+        & .Text {
+          width: 50%;
+        }
+      }
+    }
+  }
+}

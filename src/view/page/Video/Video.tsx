@@ -23,10 +23,12 @@ export default function Video() {
       id: article.id,
       title: article.title,
       url: article.url,
+      createdAt: article.createdAt,
     }
     dispatch(selectVideoBlog(blog))
     navigate(`/video/${article.id}`)
   }
+  if (isLoading) return <div>Loading..</div>
   return (
     <div className={styles.Video}>
       <div className={styles.MainImgContainer}>

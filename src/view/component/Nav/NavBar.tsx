@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { MENU } from './NavData'
 import { BiDownArrow } from 'react-icons/bi'
 import { IProps } from './NavBar.type'
+
 import styles from './NavBar.module.scss'
 
 function NavBar(props: React.PropsWithChildren<IProps>) {
